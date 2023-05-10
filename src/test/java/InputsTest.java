@@ -10,7 +10,7 @@ public class InputsTest extends BaseTest {
         driver.get(INPUTS_PAGE);
         WebElement input = driver.findElement(By.cssSelector("[type]"));
         input.sendKeys(Keys.ARROW_UP);
-        Assert.assertTrue(input.getAttribute("value").contains("1"), "Value wasn't entered");
+        Assert.assertTrue(input.getAttribute("value").equals("1"), "Value wasn't entered");
     }
 
     @Test
@@ -18,6 +18,6 @@ public class InputsTest extends BaseTest {
         driver.get(INPUTS_PAGE);
         WebElement input = driver.findElement(By.cssSelector("[type]"));
         input.sendKeys(Keys.ARROW_DOWN);
-        Assert.assertTrue(input.getAttribute("value").contains("-1"), "Value wasn't entered");
+        Assert.assertTrue(input.getAttribute("value").equals("-1"), "Value wasn't entered");
     }
 }
