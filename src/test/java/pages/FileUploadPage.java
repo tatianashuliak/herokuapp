@@ -19,7 +19,7 @@ public class FileUploadPage extends BasePage{
     public String getFileName(){
         driver.findElement(UPLOAD_BUTTON).sendKeys(System.getProperty("user.dir").concat("/src/test/resources/photos/Are there still attractions in Europe that are open_.jpg"));
         driver.findElement(SUBMIT_BUTTON).click();
-        String uploadedFileName = driver.findElement(UPLOADED_FILES).getText();
+        String uploadedFileName = new String(driver.findElement(UPLOADED_FILES).getText());
         return uploadedFileName;
     }
 

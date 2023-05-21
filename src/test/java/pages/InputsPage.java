@@ -17,25 +17,25 @@ public class InputsPage extends BasePage {
     public void openInputsPage() {
         driver.get(INPUTS_PAGE);
     }
-    public void inputArrowUp() {
+
+    public boolean inputArrowUp(int numberOfInputs) {
         WebElement input = driver.findElement(INPUT);
-        input.sendKeys(Keys.ARROW_UP);
+        for (int i = 0; i < numberOfInputs; i++) {
+            input.sendKeys(Keys.ARROW_UP);
+        }
+        String numberOfArrowUp = new String(Integer.toString(numberOfInputs));
+        System.out.println(numberOfArrowUp);
+        boolean isInputEqualsNumberOfArrowUp = input.getAttribute("value").equals(numberOfArrowUp);
+        return isInputEqualsNumberOfArrowUp;
     }
 
-    public boolean isInputEquals1() {
+    public boolean inputArrowDown(int numberOfInputs) {
         WebElement input = driver.findElement(INPUT);
-        boolean isInputEquals1 = input.getAttribute("value").equals("1");
-        return isInputEquals1;
-    }
-
-    public void inputArrowDown() {
-        WebElement input = driver.findElement(INPUT);
-        input.sendKeys(Keys.ARROW_DOWN);
-
-    }
-    public boolean isInputEqualsMinus1() {
-        WebElement input = driver.findElement(INPUT);
-        boolean isInputEqualsMinus1 = input.getAttribute("value").equals("-1");
-        return isInputEqualsMinus1;
+        for (int i = 0; i < numberOfInputs; i++) {
+            input.sendKeys(Keys.ARROW_DOWN);
+        }
+        String numberOfArrowDown = new String(Integer.toString(numberOfInputs));
+        boolean isInputEqualsNumberOfArrowDown = input.getAttribute("value").equals("-" + numberOfArrowDown);
+        return isInputEqualsNumberOfArrowDown;
     }
 }
