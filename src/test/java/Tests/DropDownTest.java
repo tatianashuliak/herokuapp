@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DropDownPage;
 
-public class DropDownTest extends BaseTest{
+public class DropDownTest extends BaseTest {
     @Test
     public void isOption1Selected() {
         DropDownPage dropDownPage = new DropDownPage(driver);

@@ -1,27 +1,33 @@
 package Tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.InputsPage;
 
-import static Constants.PageUrls.*;
 public class InputsTest extends BaseTest {
-    @Test
-    public void inputArrowUpTest() {
+    @Test(dataProvider = "testData")
+    public void inputArrowUpTest(int numberOfInputs) {
         InputsPage inputsPage = new InputsPage(driver);
         inputsPage.openInputsPage();
-        inputsPage.inputArrowUp();
-        Assert.assertTrue(inputsPage.isInputEquals1(), "Value wasn't entered");
+        Assert.assertTrue(inputsPage.inputArrowUp(numberOfInputs), "Value wasn't entered");
     }
 
-    @Test
-    public void inputArrowDownTest() {
+
+    @Test(dataProvider = "testData")
+    public void inputArrowDownTest(int numberOfInputs) {
         InputsPage inputsPage = new InputsPage(driver);
         inputsPage.openInputsPage();
-        inputsPage.inputArrowDown();
-        Assert.assertTrue(inputsPage.isInputEqualsMinus1(), "Value wasn't entered");
+        Assert.assertTrue(inputsPage.inputArrowDown(numberOfInputs), "Value wasn't entered");
+    }
+
+    @DataProvider(name = "testData")
+    public Object[][] inputArrowUp() {
+        return new Object[][]{
+                {1},
+                {2},
+                {3},
+                {4}
+        };
     }
 }

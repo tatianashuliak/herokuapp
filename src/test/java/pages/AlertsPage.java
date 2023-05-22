@@ -1,4 +1,5 @@
 package pages;
+
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +11,8 @@ public class AlertsPage extends BasePage {
     private By JS_CONFIRM_BUTTON = By.cssSelector("[onclick='jsConfirm()'");
     private By JS_PROMPT_BUTTON = By.cssSelector("[onclick='jsPrompt()'");
     private By RESULT_TEXT = By.id("result");
-    public AlertsPage (WebDriver driver) {
+
+    public AlertsPage(WebDriver driver) {
         super(driver);
     }
 
@@ -41,7 +43,7 @@ public class AlertsPage extends BasePage {
         return fakerText;
     }
 
-    public String getResultText(){
+    public String getResultText() {
         String resultText = driver.findElement(RESULT_TEXT).getText();
         return resultText;
     }
