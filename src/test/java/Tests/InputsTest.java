@@ -5,7 +5,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.InputsPage;
 
-import static Constants.PageUrls.*;
 public class InputsTest extends BaseTest {
     @Test(dataProvider = "testData")
     public void inputArrowUpTest(int numberOfInputs) {
@@ -21,8 +20,9 @@ public class InputsTest extends BaseTest {
         inputsPage.openInputsPage();
         Assert.assertTrue(inputsPage.inputArrowDown(numberOfInputs), "Value wasn't entered");
     }
+
     @DataProvider(name = "testData")
-    public Object[][] inputArrowUp(){
+    public Object[][] inputArrowUp() {
         return new Object[][]{
                 {1},
                 {2},

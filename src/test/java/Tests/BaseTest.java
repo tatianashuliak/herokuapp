@@ -6,6 +6,7 @@ import org.testng.annotations.*;
 import utilities.TestListener;
 
 import java.util.concurrent.TimeUnit;
+
 @Listeners(TestListener.class)
 public class BaseTest {
     protected WebDriver driver;

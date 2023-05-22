@@ -1,6 +1,4 @@
 package pages;
-
-import com.google.common.io.BaseEncoding;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,11 +9,11 @@ public class CheckboxesPage extends BasePage {
     private By FIRST_CHECKBOX = By.xpath("//input[1]");
     private By SECOND_CHECKBOX = By.xpath("//input[2]");
 
-    public CheckboxesPage (WebDriver driver) {
+    public CheckboxesPage(WebDriver driver) {
         super(driver);
     }
 
-    public CheckboxesPage openCheckboxesPage(){
+    public CheckboxesPage openCheckboxesPage() {
         driver.get(CHECKBOXES_PAGE);
         return this;
     }

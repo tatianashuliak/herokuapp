@@ -14,6 +14,7 @@ public class TyposPage extends BasePage {
     public TyposPage(WebDriver driver) {
         super(driver);
     }
+
     public void openTyposPage() {
         driver.get(TYPOS_PAGE);
     }

@@ -2,15 +2,14 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import static Constants.PageUrls.NOTIFICATION_MESSAGES_PAGE;
 
-public class NotificationMessagesPage extends BasePage{
+public class NotificationMessagesPage extends BasePage {
     private By MESSAGE = By.id("flash");
     private By LINK = By.xpath("//a[contains(text(), 'Click here')]");
 
-    public NotificationMessagesPage (WebDriver driver){
+    public NotificationMessagesPage(WebDriver driver) {
         super(driver);
     }
 

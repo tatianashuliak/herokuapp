@@ -23,7 +23,7 @@ public class InputsPage extends BasePage {
         for (int i = 0; i < numberOfInputs; i++) {
             input.sendKeys(Keys.ARROW_UP);
         }
-        String numberOfArrowUp = new String(Integer.toString(numberOfInputs));
+        String numberOfArrowUp = Integer.toString(numberOfInputs);
         System.out.println(numberOfArrowUp);
         boolean isInputEqualsNumberOfArrowUp = input.getAttribute("value").equals(numberOfArrowUp);
         return isInputEqualsNumberOfArrowUp;
@@ -34,7 +34,7 @@ public class InputsPage extends BasePage {
         for (int i = 0; i < numberOfInputs; i++) {
             input.sendKeys(Keys.ARROW_DOWN);
         }
-        String numberOfArrowDown = new String(Integer.toString(numberOfInputs));
+        String numberOfArrowDown = Integer.toString(numberOfInputs);
         boolean isInputEqualsNumberOfArrowDown = input.getAttribute("value").equals("-" + numberOfArrowDown);
         return isInputEqualsNumberOfArrowDown;
     }
