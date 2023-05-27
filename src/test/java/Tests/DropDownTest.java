@@ -1,11 +1,13 @@
 package Tests;
 
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DropDownPage;
 
 public class DropDownTest extends BaseTest {
     @Test
+    @Description("Selecting first option")
     public void isOption1Selected() {
         DropDownPage dropDownPage = new DropDownPage(driver);
         dropDownPage.openDropDownPage();
@@ -13,6 +15,7 @@ public class DropDownTest extends BaseTest {
     }
 
     @Test
+    @Description("Selecting second option")
     public void isOption2Selected() {
         DropDownPage dropDownPage = new DropDownPage(driver);
         dropDownPage.openDropDownPage();

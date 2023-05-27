@@ -1,5 +1,6 @@
 package Tests;
 
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -7,6 +8,7 @@ import pages.InputsPage;
 
 public class InputsTest extends BaseTest {
     @Test(dataProvider = "testData")
+    @Description("Click and input ArrowUp")
     public void inputArrowUpTest(int numberOfInputs) {
         InputsPage inputsPage = new InputsPage(driver);
         inputsPage.openInputsPage();
@@ -15,6 +17,7 @@ public class InputsTest extends BaseTest {
 
 
     @Test(dataProvider = "testData")
+    @Description("Click and input ArrowDown")
     public void inputArrowDownTest(int numberOfInputs) {
         InputsPage inputsPage = new InputsPage(driver);
         inputsPage.openInputsPage();

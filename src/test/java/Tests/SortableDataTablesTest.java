@@ -1,5 +1,6 @@
 package Tests;
 
+import io.qameta.allure.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -10,6 +11,7 @@ import static Constants.PageUrls.*;
 
 public class SortableDataTablesTest extends BaseTest {
     @Test
+    @Description("Checking that last name in table is correct")
     public void table1LastNameTest() {
         SortableDataTablesPage sortableDataTablesPage = new SortableDataTablesPage(driver);
         sortableDataTablesPage.openSortableDataTablesPage();
@@ -17,6 +19,7 @@ public class SortableDataTablesTest extends BaseTest {
     }
 
     @Test
+    @Description("Checking that first name in table is correct")
     public void table1FirstNameTest() {
         SortableDataTablesPage sortableDataTablesPage = new SortableDataTablesPage(driver);
         sortableDataTablesPage.openSortableDataTablesPage();
@@ -24,6 +27,7 @@ public class SortableDataTablesTest extends BaseTest {
     }
 
     @Test
+    @Description("Checking that due in table is correct")
     public void table2DueTest() {
         SortableDataTablesPage sortableDataTablesPage = new SortableDataTablesPage(driver);
         sortableDataTablesPage.openSortableDataTablesPage();
@@ -31,6 +35,7 @@ public class SortableDataTablesTest extends BaseTest {
     }
 
     @Test
+    @Description("Checking that website in table is correct")
     public void table2WebSiteTest() {
         SortableDataTablesPage sortableDataTablesPage = new SortableDataTablesPage(driver);
         sortableDataTablesPage.openSortableDataTablesPage();
