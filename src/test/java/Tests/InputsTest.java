@@ -5,13 +5,14 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.InputsPage;
+import steps.InputsSteps;
 
 public class InputsTest extends BaseTest {
     @Test(dataProvider = "testData")
     @Description("Click and input ArrowUp")
     public void inputArrowUpTest(int numberOfInputs) {
         InputsPage inputsPage = new InputsPage(driver);
-        inputsPage.openInputsPage();
+        InputsSteps.openInputsPage(driver);
         Assert.assertTrue(inputsPage.inputArrowUp(numberOfInputs), "Value wasn't entered");
     }
 
@@ -20,7 +21,7 @@ public class InputsTest extends BaseTest {
     @Description("Click and input ArrowDown")
     public void inputArrowDownTest(int numberOfInputs) {
         InputsPage inputsPage = new InputsPage(driver);
-        inputsPage.openInputsPage();
+        InputsSteps.openInputsPage(driver);
         Assert.assertTrue(inputsPage.inputArrowDown(numberOfInputs), "Value wasn't entered");
     }
 

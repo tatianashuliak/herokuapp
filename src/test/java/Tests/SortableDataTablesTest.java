@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.SortableDataTablesPage;
+import steps.SortableDataTablesSteps;
 
 import static Constants.PageUrls.*;
 
@@ -14,7 +15,7 @@ public class SortableDataTablesTest extends BaseTest {
     @Description("Checking that last name in table is correct")
     public void table1LastNameTest() {
         SortableDataTablesPage sortableDataTablesPage = new SortableDataTablesPage(driver);
-        sortableDataTablesPage.openSortableDataTablesPage();
+        SortableDataTablesSteps.openSortableDataTablesPage(driver);
         Assert.assertTrue(sortableDataTablesPage.isLastNameBach());
     }
 
@@ -22,7 +23,7 @@ public class SortableDataTablesTest extends BaseTest {
     @Description("Checking that first name in table is correct")
     public void table1FirstNameTest() {
         SortableDataTablesPage sortableDataTablesPage = new SortableDataTablesPage(driver);
-        sortableDataTablesPage.openSortableDataTablesPage();
+        SortableDataTablesSteps.openSortableDataTablesPage(driver);
         Assert.assertTrue(sortableDataTablesPage.isFirstNameFrank());
     }
 
@@ -30,7 +31,7 @@ public class SortableDataTablesTest extends BaseTest {
     @Description("Checking that due in table is correct")
     public void table2DueTest() {
         SortableDataTablesPage sortableDataTablesPage = new SortableDataTablesPage(driver);
-        sortableDataTablesPage.openSortableDataTablesPage();
+        SortableDataTablesSteps.openSortableDataTablesPage(driver);
         Assert.assertTrue(sortableDataTablesPage.isDue51$());
     }
 
@@ -38,7 +39,7 @@ public class SortableDataTablesTest extends BaseTest {
     @Description("Checking that website in table is correct")
     public void table2WebSiteTest() {
         SortableDataTablesPage sortableDataTablesPage = new SortableDataTablesPage(driver);
-        sortableDataTablesPage.openSortableDataTablesPage();
+        SortableDataTablesSteps.openSortableDataTablesPage(driver);
         Assert.assertTrue(sortableDataTablesPage.isWebsiteCorrect());
     }
 }

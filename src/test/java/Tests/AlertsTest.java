@@ -4,6 +4,7 @@ import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AlertsPage;
+import steps.AlertsSteps;
 
 import static Constants.Texts.JS_ALERT_TEXT;
 import static Constants.Texts.JS_CONFIRM_TEXT;
@@ -13,7 +14,7 @@ public class AlertsTest extends BaseTest {
     @Description("Inducing JS Alert")
     public void jsAlertTest() {
         AlertsPage alertsPage = new AlertsPage(driver);
-        alertsPage.openAlertsPage();
+        AlertsSteps.openAlertsPage(driver);
         Assert.assertTrue(alertsPage.getTextJSAlert().equals(JS_ALERT_TEXT), "JS Alert text incorrect");
     }
 
@@ -21,7 +22,7 @@ public class AlertsTest extends BaseTest {
     @Description("Inducing JS Confirm Alert")
     public void jsConfirmTest() {
         AlertsPage alertsPage = new AlertsPage(driver);
-        alertsPage.openAlertsPage();
+        AlertsSteps.openAlertsPage(driver);
         Assert.assertTrue(alertsPage.getTextJSConfirm().equals(JS_CONFIRM_TEXT), "JS Confirm text is incorrect");
     }
 
@@ -29,7 +30,7 @@ public class AlertsTest extends BaseTest {
     @Description("Inducing JS Prompt Alert")
     public void jsPromptTest() {
         AlertsPage alertsPage = new AlertsPage(driver);
-        alertsPage.openAlertsPage();
+        AlertsSteps.openAlertsPage(driver);
         String enteredText = alertsPage.inputTextJSPrompt();
         String resultText = alertsPage.getResultText();
         Assert.assertTrue(resultText.equals("You entered: ".concat(enteredText)));
