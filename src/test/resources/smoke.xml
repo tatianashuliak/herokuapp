@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke Test" thread-count="2" parallel="classes">
+    <listeners>
+        <listener class-name="utilities.AnnotationTransformer"></listener>
+    </listeners>
+    <parameter name="browser" value="chrome"/>
+    <test name="test 1">
+        <classes>
+            <class name="Tests.AlertsTest"></class>
+            <class name="Tests.BaseTest"></class>
+            <class name="Tests.CheckboxesTest"></class>
+            <class name="Tests.DragAndDropTest"></class>
+            <class name="Tests.DropDownTest"></class>
+            <class name="Tests.FileUploadTest"></class>
+            <class name="Tests.InputsTest"></class>
+            <class name="Tests.NotificationMessagesTest"></class>
+            <class name="Tests.SortableDataTablesTest"></class>
+            <class name="Tests.TyposTest"></class>
+        </classes>
+    </test>
+</suite>
